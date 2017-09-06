@@ -6,49 +6,107 @@ package com.example.renubalakrishna.movie_app;
 // Author:       <A HREF="mailto:renubk@gmail.com">[Name]</A>
 //
 
-public class Movie {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Movie implements Parcelable{
     // Movie title
-    private final String title;
+    private String mTitle;
 
     // Poster URL
-    private final String posterUrl;
+    private String mPosterUrl;
 
     // Plot synopsis
-    private final String ploSynopsis;
+    private String mPloSynopsis;
 
     // User rating
-    private final double userRating;
+    private double mUserRating;
 
     // Release Date
-    private final String releaseDate;
+    private String mReleaseDate;
 
     // Currently movie needs to initialize all members
-    public Movie(String title, String posterUrl, String ploSynopsis, double userRating, String releaseDate) {
-        this.title = title;
-        this.posterUrl = posterUrl;
-        this.ploSynopsis = ploSynopsis;
-        this.userRating = userRating;
-        this.releaseDate = releaseDate;
+    private Movie(Parcel in) {
+        this.mTitle = in.readString();
+        this.mPosterUrl = in.readString();
+        this.mPloSynopsis = in.readString();
+        this.mUserRating = in.readDouble();
+        this.mReleaseDate = in.readString();
+    }
+
+    public Movie(){
+
     }
 
     //  Getters for all data
     public String getTitle() {
-        return title;
+        return mTitle;
     }
 
     public String getPosterUrl() {
-        return posterUrl;
+        return mPosterUrl;
     }
 
     public String getPloSynopsis() {
-        return ploSynopsis;
+        return mPloSynopsis;
     }
 
     public double getUserRating() {
-        return userRating;
+        return mUserRating;
     }
 
     public String getReleaseDate() {
-        return releaseDate;
+        return mReleaseDate;
     }
+
+    public void setTitle(String mTitle) {
+        this.mTitle = mTitle;
+    }
+
+    public void setPosterUrl(String mPosterUrl) {
+        this.mPosterUrl = mPosterUrl;
+    }
+
+    public void setPloSynopsis(String mPloSynopsis) {
+        this.mPloSynopsis = mPloSynopsis;
+    }
+
+    public void setUserRating(double mUserRating) {
+        this.mUserRating = mUserRating;
+    }
+
+    public void setReleaseDate(String mReleaseDate) {
+        this.mReleaseDate = mReleaseDate;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mTitle);
+        parcel.writeString(mPosterUrl);
+        parcel.writeString(mPloSynopsis);
+        parcel.writeDouble(mUserRating);
+        parcel.writeString(mReleaseDate);
+    }
+
+    public static final Parcelable.Creator<Movie> CREATOR
+            = new Parcelable.Creator<Movie>() {
+
+        // This simply calls our new constructor (typically private) and
+        // passes along the unmarshalled `Parcel`, and then returns the new object!
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        // We just need to copy this and change the type to match our class.
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

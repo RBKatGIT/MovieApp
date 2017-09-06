@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/a34bedac15f87d1601a4c636ecb98f83307e12fd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_bd9e5071db12bece7a170a9d06eec3abce697875.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/38640fe326615334b68f730b1e2f0c83c664f086/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_e82d39fa8aae98a17eaa7710592bc99cadd150dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/f9acf9440a8189a15ff1bb6f9bb3a19ab24ea760/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_89decc946047854508ac42dd23ee03414bbcff5e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/Documents/Grdle/gradle-4.0.1/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.4.0/40340c0748190fe897baf7bffbc1b282734294e5/okhttp-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/okhttp-2.4.0_5ec0c8d8587b052b55e3d19544cfcb7bc0a009b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/Documents/Grdle/gradle-4.0.1/caches/modules-2/files-2.1/com.jakewharton.picasso/picasso2-okhttp3-downloader/1.0.2/74a586d03a233d356290983d1ef23a64c1d122b2/picasso2-okhttp3-downloader-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="74a586d03a233d356290983d1ef23a64c1d122b2">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/picasso2-okhttp3-downloader-1.0.2_68e34d916d0981b3b741fa0fed6b75ba5fa1beb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/f8998af87994cc2db38a981045d44dc51337cc3c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_608a2b2059b6b06589af82f56fcd8d16039931aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/889bcc8d1c6bf905f3cdbcf8b4f414ed5a86ce10/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_459e37526088125c10d50a266ad86ba33bb7e484.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/b17969ec01f4da657f746ba302e3492b1d3db3d8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_d7f83a8569f7b2f5bf32842c8c26bbee6844206a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/Documents/Grdle/gradle-4.0.1/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/okio-1.6.0_a2ca319406e5f3ca8f70e1a71211375fe17a28d3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.1_a541535b7b78591eff2929605a973e458d7cb35b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/1d268cad5e230998427fe0201a1bfc58fddfc214/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_1c334269c92917057af6fa0e9fc1b680c4586b3f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/Documents/Grdle/gradle-4.0.1/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.0.1/b34c1f2d993044656e87f88970b6818e99e886ba/okhttp-3.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="b34c1f2d993044656e87f88970b6818e99e886ba">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/okhttp-3.0.1_24049294ad6286653cb2209ad8db44b20c3d11a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/1718b1f0d113146abab16f64a76ebebb87338f54/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_97537312f63279dd0ed91b83356c4fb53e4ea840.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/5cd668a40f80f107ff6b72dc3ac6e492feb2a3b8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_014e4f9a7a27206b234864874416b953088f6ce8.jar" />
+    </item>
+
+</items>

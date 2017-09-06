@@ -18,26 +18,26 @@ public class DetailActivity extends AppCompatActivity {
         // Get the intent that started this activity
         Intent intent = getIntent();
 
-        Bundle params = intent.getExtras();
+        Movie params = intent.getParcelableExtra("DATA_KEY");
 
         if(params != null)
         {
             // Display title
-            String title = params.getString("TITLE");
+            String title = params.getTitle();
             if(title!= null){
                 TextView titleView = (TextView) findViewById(R.id.detail_movie_title);
                 titleView.setText(title);
             }
 
             // Display poster
-            String poster_url = params.getString("POSTER_URL");
+            String poster_url = params.getPosterUrl();
             if(poster_url!= null){
                 ImageView imagePoster = (ImageView) findViewById(R.id.detail_image_poster);
                 with(getApplicationContext()).load(poster_url).into(imagePoster);
             }
 
             // Display movie overview
-            String synopsis = params.getString("PLOT_SYNOPSIS");
+            String synopsis = params.getPloSynopsis();
             if(synopsis!= null){
                 TextView synopsisView = (TextView) findViewById(R.id.detail_movie_synopsis);
                 synopsis = getString(R.string.plot_synopsis) +synopsis;
@@ -45,13 +45,13 @@ public class DetailActivity extends AppCompatActivity {
             }
 
             // Display rating
-            Double rating = params.getDouble("USER_RATING", 0.0);
+            Double rating = params.getUserRating();
             TextView ratingView = (TextView) findViewById(R.id.detail_user_rating);
             String ratingString = getString(R.string.rating)+rating;
             ratingView.setText(ratingString);
 
             // Display release Date
-            String release_date = params.getString("RELEASE_DATE");
+            String release_date = params.getReleaseDate();
             if(release_date!= null){
                 TextView releaseView = (TextView) findViewById(R.id.detail_release_date);
                 release_date = getString(R.string.release_on)+release_date;

@@ -75,13 +75,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
                 if(movie != null) {
                     Log.i("Onclick", "Sending to Detail Activity");
                     Intent detailIntent = new Intent(MainActivity.this, DetailActivity.class);
-                    Bundle params = new Bundle();
-                    params.putString("TITLE", movie.getTitle());
-                    params.putString("POSTER_URL", movie.getPosterUrl());
-                    params.putString("PLOT_SYNOPSIS", movie.getPloSynopsis());
-                    params.putDouble("USER_RATING", movie.getUserRating());
-                    params.putString("RELEASE_DATE", movie.getReleaseDate());
-                    detailIntent.putExtras(params);
+                    detailIntent.putExtra("DATA_KEY", movie);
                     startActivity(detailIntent);
                 }
                 else {
@@ -113,15 +107,16 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
      */
     private void startQuery(SortPreference preference){
         String url = null;
+        String API = BuildConfig.API_KEY;
         if(preference == SortPreference.POPULARITY) {
             Log.i("startQuery", "Start query based on popularity");
             // URL for popular movies
-            url = "https://api.themoviedb.org/3/discover/movie?api_key=" + (getString(R.string.api_key)) + "&language=en-US&sort_by=popularity.desc";
+            url = "https://api.themoviedb.org/3/movie/popular?api_key=" + API + "&language=en-US&page=1";
         }
         else if(preference == SortPreference.TOP_RATED){
             Log.i("startQuery", "Start query based top-rating");
             // URL for popular movies
-            url = "https://api.themoviedb.org/3/discover/movie?api_key=" + (getString(R.string.api_key)) + "&language=en-US&sort_by=vote_average.desc";
+            url = "https://api.themoviedb.org/3/movie/top_rated?api_key=" + API + "&language=en-US&page=1";
         }
 
         JsonObjectRequest jReq = new JsonObjectRequest(Request.Method.GET,url,
@@ -145,7 +140,12 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
                                 // Skip the movies with empty fields, this was added since some of
                                 // the movies did not have a poster path
                                 if(!poster_path.equals("null") && !poster_url.equals("null") && !releaseDate.equals("null")) {
-                                    Movie movie = new Movie(title, poster_url, plotSynopsis, userRating, releaseDate);
+                                    Movie movie = new Movie();
+                                    movie.setTitle(title);
+                                    movie.setPosterUrl(poster_url);
+                                    movie.setPloSynopsis(plotSynopsis);
+                                    movie.setUserRating(userRating);
+                                    movie.setReleaseDate(releaseDate);
                                     movieList.add(movie);
                                     Log.i("onResponse", "Adding Movie: " + title);
                                 }

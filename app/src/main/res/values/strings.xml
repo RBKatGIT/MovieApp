@@ -3,8 +3,6 @@
     <string name="app_name">Movie_App</string>
     <string name="poster_base_url">"http://image.tmdb.org/t/p/"</string>
     <string name="poster_size">w185</string>
-    <!--TODO - place your API key here-->
-    <string name="api_key">YOUR_KEY</string>
     <string-array name="preferences">
         <item>TOP RATED</item>
         <item>MOST POPULAR</item>

@@ -10,8 +10,6 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-import static com.squareup.picasso.Picasso.with;
-
 // File:         MovieAdapter.java
 // Created:      [2017/08/05 creation date]
 // Last Changed: $Date: 2017/08/05 15:15:25 $
@@ -66,7 +64,7 @@ class MovieAdapter extends BaseAdapter {
         else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        with(mContext).load(posterUrl).into(viewHolder.imageView);
+        PicassoCache.getPicassoInstance(mContext).load(posterUrl).into(viewHolder.imageView);
         return convertView;
     }
 
