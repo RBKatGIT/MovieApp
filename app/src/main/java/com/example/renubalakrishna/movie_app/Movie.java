@@ -3,7 +3,7 @@ package com.example.renubalakrishna.movie_app;
 // File:         Movie.java
 // Created:      [2017/08/05 creation date]
 // Last Changed: $Date: 2017/08/05 15:15:25 $
-// Author:       <A HREF="mailto:renubk@gmail.com">[Name]</A>
+// Author:       <A HREF="mailto:renubk@gmail.com">[Renu Balakrishna]</A>
 //
 
 import android.os.Parcel;
@@ -97,7 +97,7 @@ public class Movie implements Parcelable{
             = new Parcelable.Creator<Movie>() {
 
         // This simply calls our new constructor (typically private) and
-        // passes along the unmarshalled `Parcel`, and then returns the new object!
+        // passes along the `Parcel`, and then returns the new object!
         @Override
         public Movie createFromParcel(Parcel in) {
             return new Movie(in);

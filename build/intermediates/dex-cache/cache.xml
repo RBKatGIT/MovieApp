@@ -39,6 +39,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/renubalakrishna/.android/build-cache/7e7efcc676f90d6f87709737ee0181adbf74823b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/renubalakrishna/AndroidStudioProjects/Movie_App_For_Submission/app/build/intermediates/pre-dexed/debug/classes_6277051db93affd7cca48d16382a5d0b900e12f0.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/renubalakrishna/Documents/Grdle/gradle-4.0.1/caches/modules-2/files-2.1/com.jakewharton.picasso/picasso2-okhttp3-downloader/1.0.2/74a586d03a233d356290983d1ef23a64c1d122b2/picasso2-okhttp3-downloader-1.0.2.jar"
         jumboMode="false"
         optimize="true"

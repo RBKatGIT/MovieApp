@@ -6,8 +6,6 @@
     <dimen name="detail_activity_element_right">8dp</dimen>
     <dimen name="detail_activity_element_top">4dp</dimen>
     <dimen name="spinner_left_margin">24dp</dimen>
-    <dimen name="grid_view_column_width">100dp</dimen>
-    <dimen name="grid_view_horizontal_space">10dp</dimen>
-    <dimen name="grid_view_vertical_space">15dp</dimen>
+    <dimen name="posterPadding">10dp</dimen>
 
 </resources>

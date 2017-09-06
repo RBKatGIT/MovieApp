@@ -3,11 +3,12 @@ package com.example.renubalakrishna.movie_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,7 +25,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity  implements AdapterView.OnItemSelectedListener, RecyclerViewAdapter.GridItemClickListener{
 
     public enum SortPreference{
         POPULARITY,
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
     // Instantiate the request queue
     private RequestQueue mRequestQueue;
 
-    private MovieAdapter mAdapter;
+    private RecyclerViewAdapter mAdapter;
 
     // Network error status
     private boolean mNetworkError= false;
@@ -53,36 +54,26 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
         mPreferenceSpinner.setAdapter(adapter);
         mPreferenceSpinner.setOnItemSelectedListener(MainActivity.this);
 
-        // Get the gridView from layout
-        GridView gridView =   (GridView) findViewById(R.id.grid_view);
+        // Get the recycler View
+        RecyclerView rvView = (RecyclerView) findViewById(R.id.rvPosters);
+
         ArrayList<Movie> emptyArray = new ArrayList<>();
         // Create a new adapter object from the adapter class
-        mAdapter = new MovieAdapter(this, emptyArray);
+        mAdapter = new RecyclerViewAdapter(this, emptyArray, this);
+        // Get first set of data
+
         Log.i("onCreate", "Starting query");
         mRequestQueue = Volley.newRequestQueue(this);
-
-        // Set adapter for the grid View
-        gridView.setAdapter(mAdapter);
-
         // Load the movie posters by popularity
         startQuery(SortPreference.POPULARITY);
 
-        // On click show detailed Page
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Movie movie = mAdapter.getItem(position);
-                if(movie != null) {
-                    Log.i("Onclick", "Sending to Detail Activity");
-                    Intent detailIntent = new Intent(MainActivity.this, DetailActivity.class);
-                    detailIntent.putExtra("DATA_KEY", movie);
-                    startActivity(detailIntent);
-                }
-                else {
-                    Log.e("Onclick", "Empty movie item");
-                }
-            }
-        });
+        // Set adapter for the grid View
+        rvView.setAdapter(mAdapter);
+
+        //Set Layout manager
+        rvView.setLayoutManager(new GridLayoutManager(this,3));
+
+        rvView.setHasFixedSize(true);
     }
 
 
@@ -180,10 +171,10 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
      */
     private void setErrorViewVisible(){
         mNetworkError = true;
-        GridView gridView = (GridView) findViewById(R.id.grid_view);
+        RecyclerView rvView = (RecyclerView) findViewById(R.id.rvPosters);
         TextView errorView = (TextView) findViewById(R.id.error_text);
         // Show error on screen
-        gridView.setVisibility(View.INVISIBLE);
+        rvView.setVisibility(View.INVISIBLE);
         errorView.setVisibility(View.VISIBLE);
     }
 
@@ -194,10 +185,10 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
     private void setGridViewVisible(){
         if(mNetworkError) {
             mNetworkError = false;
-            GridView gridView = (GridView) findViewById(R.id.grid_view);
+            RecyclerView rvView = (RecyclerView) findViewById(R.id.rvPosters);
             TextView errorView = (TextView) findViewById(R.id.error_text);
-            // Enable grid
-            gridView.setVisibility(View.VISIBLE);
+            // Enable RV
+            rvView.setVisibility(View.VISIBLE);
             errorView.setVisibility(View.INVISIBLE);
         }
     }
@@ -223,4 +214,17 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
         Log.i("onNothingSelected", "Nothing selected");
     }
 
+    @Override
+    public void onGridItemClick(int itemPosition) {
+        Movie movie = mAdapter.getItem(itemPosition);
+        if(movie != null) {
+            Log.i("onGridItemClick", "Sending to Detail Activity");
+            Intent detailIntent = new Intent(MainActivity.this, DetailActivity.class);
+            detailIntent.putExtra("DATA_KEY", movie);
+            startActivity(detailIntent);
+        }
+        else {
+            Log.e("onGridItemClick", "Empty movie item");
+        }
+    }
 }

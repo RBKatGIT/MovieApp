@@ -15,7 +15,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        // Get the intent that started this activity
         Intent intent = getIntent();
 
         Movie params = intent.getParcelableExtra("DATA_KEY");
