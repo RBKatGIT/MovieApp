@@ -12,15 +12,15 @@ import java.util.ArrayList;
 
 import static com.squareup.picasso.Picasso.with;
 
-/**
- * Created by renubalakrishna on 30/08/17.
- */
-
-public class MovieAdapter extends BaseAdapter {
+// File:         MovieAdapter.java
+// Created:      [2017/08/05 creation date]
+// Last Changed: $Date: 2017/08/05 15:15:25 $
+// Author:       <A HREF="mailto:renubk@gmail.com">[Name]</A>
+//
+class MovieAdapter extends BaseAdapter {
 
     private final Context mContext;
     private ArrayList<Movie> mMovieList;
-    private boolean networkError= false;
 
     public MovieAdapter(Context mContext, ArrayList<Movie> movieList) {
         this.mContext = mContext;
@@ -53,13 +53,13 @@ public class MovieAdapter extends BaseAdapter {
         if(mMovieList == null){
             return null;
         }
-        final String posterUrl = mMovieList.get(position).getPosterUrl().toString();
+        final String posterUrl = mMovieList.get(position).getPosterUrl();
         Log.i("getView", "Image URL is" + posterUrl);
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder;
         if(convertView == null){
             viewHolder = new ViewHolder();
             final LayoutInflater inflater = LayoutInflater.from(mContext);
-            convertView = inflater.inflate(R.layout.linearlayout_movies,null);
+            convertView = inflater.inflate(R.layout.linearlayout_movies,parent,false);
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.imageview_poster);
             convertView.setTag(viewHolder);
         }

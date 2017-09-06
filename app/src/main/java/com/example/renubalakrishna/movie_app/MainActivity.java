@@ -29,20 +29,14 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
     public enum SortPreference{
         POPULARITY,
         TOP_RATED
-    };
+    }
     // Instantiate the request queue
-    RequestQueue mRequestQueue;
+    private RequestQueue mRequestQueue;
 
-    MovieAdapter mAdapter;
+    private MovieAdapter mAdapter;
 
     // Network error status
     private boolean mNetworkError= false;
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +55,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
 
         // Get the gridView from layout
         GridView gridView =   (GridView) findViewById(R.id.grid_view);
-        ArrayList<Movie> emptyArray = new ArrayList<Movie>();
+        ArrayList<Movie> emptyArray = new ArrayList<>();
         // Create a new adapter object from the adapter class
         mAdapter = new MovieAdapter(this, emptyArray);
         Log.i("onCreate", "Starting query");
@@ -101,7 +95,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
     /**
      * Clear movie list
      */
-    void clearGridView(){
+    private void clearGridView(){
         if(mAdapter != null) {
             mAdapter.setMovieList(null);
             setGridViewVisible();
@@ -117,7 +111,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
      * Handle web query for the movie list
      * @param preference - By popularity or top rating
      */
-    void startQuery(SortPreference preference){
+    private void startQuery(SortPreference preference){
         String url = null;
         if(preference == SortPreference.POPULARITY) {
             Log.i("startQuery", "Start query based on popularity");
@@ -150,7 +144,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
                                 String releaseDate = movieJson.getString("release_date");
                                 // Skip the movies with empty fields, this was added since some of
                                 // the movies did not have a poster path
-                                if(poster_path != "null" && poster_url !="null" && releaseDate != "null") {
+                                if(!poster_path.equals("null") && !poster_url.equals("null") && !releaseDate.equals("null")) {
                                     Movie movie = new Movie(title, poster_url, plotSynopsis, userRating, releaseDate);
                                     movieList.add(movie);
                                     Log.i("onResponse", "Adding Movie: " + title);
@@ -184,7 +178,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
      * Network error occurred
      * Keep status to swap the views later when fixed
      */
-    public void setErrorViewVisible(){
+    private void setErrorViewVisible(){
         mNetworkError = true;
         GridView gridView = (GridView) findViewById(R.id.grid_view);
         TextView errorView = (TextView) findViewById(R.id.error_text);
@@ -197,7 +191,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterView.OnIt
      * Network error Fixed
      * Re-enable grid view
      */
-    public void setGridViewVisible(){
+    private void setGridViewVisible(){
         if(mNetworkError) {
             mNetworkError = false;
             GridView gridView = (GridView) findViewById(R.id.grid_view);

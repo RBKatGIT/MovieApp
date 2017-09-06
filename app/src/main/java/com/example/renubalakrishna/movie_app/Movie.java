@@ -1,24 +1,26 @@
 package com.example.renubalakrishna.movie_app;
 
-/**
- * Created by renubalakrishna on 01/09/17.
- */
+// File:         Movie.java
+// Created:      [2017/08/05 creation date]
+// Last Changed: $Date: 2017/08/05 15:15:25 $
+// Author:       <A HREF="mailto:renubk@gmail.com">[Name]</A>
+//
 
 public class Movie {
     // Movie title
-    private String title;
+    private final String title;
 
     // Poster URL
-    private String posterUrl;
+    private final String posterUrl;
 
     // Plot synopsis
-    private String ploSynopsis;
+    private final String ploSynopsis;
 
     // User rating
-    private double userRating;
+    private final double userRating;
 
     // Release Date
-    private String releaseDate;
+    private final String releaseDate;
 
     // Currently movie needs to initialize all members
     public Movie(String title, String posterUrl, String ploSynopsis, double userRating, String releaseDate) {

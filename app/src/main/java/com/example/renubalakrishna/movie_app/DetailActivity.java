@@ -36,23 +36,26 @@ public class DetailActivity extends AppCompatActivity {
                 with(getApplicationContext()).load(poster_url).into(imagePoster);
             }
 
-            // Display moview overview
+            // Display movie overview
             String synopsis = params.getString("PLOT_SYNOPSIS");
             if(synopsis!= null){
                 TextView synopsisView = (TextView) findViewById(R.id.detail_movie_synopsis);
-                synopsisView.setText("Plot Synopsis : "+ synopsis);
+                synopsis = getString(R.string.plot_synopsis) +synopsis;
+                synopsisView.setText(synopsis);
             }
 
             // Display rating
             Double rating = params.getDouble("USER_RATING", 0.0);
             TextView ratingView = (TextView) findViewById(R.id.detail_user_rating);
-            ratingView.setText("Rating : "+rating);
+            String ratingString = getString(R.string.rating)+rating;
+            ratingView.setText(ratingString);
 
             // Display release Date
             String release_date = params.getString("RELEASE_DATE");
             if(release_date!= null){
                 TextView releaseView = (TextView) findViewById(R.id.detail_release_date);
-                releaseView.setText("Released on : "+release_date);
+                release_date = getString(R.string.release_on)+release_date;
+                releaseView.setText(release_date);
             }
         }
 

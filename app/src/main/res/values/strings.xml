@@ -3,13 +3,18 @@
     <string name="app_name">Movie_App</string>
     <string name="poster_base_url">"http://image.tmdb.org/t/p/"</string>
     <string name="poster_size">w185</string>
-    <string name="action_settings">action_settings</string>
     <!--TODO - place your API key here-->
-    <string name="api_key">#####</string>
-    <string name="popular">MOST POPULAR</string>
-    <string name="toprated">TOP RATED</string>
+    <string name="api_key">YOUR_KEY</string>
     <string-array name="preferences">
         <item>TOP RATED</item>
         <item>MOST POPULAR</item>
     </string-array>
+    <string name="detail_image_desc">Movie poster</string>
+    <string name="main_image_desc">Movie poster</string>
+    <string name="network_error">Network Error</string>
+    <string name="plot_synopsis">"Plot Synopsis : "</string>
+    <string name="rating">"Rating : "</string>
+    <string name="release_on">"Released on : "</string>
+    <string name="filter_google_browse">Browse</string>
+
 </resources>
